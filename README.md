@@ -1,52 +1,49 @@
 # 🤖 AI Knowledge Assistant
 
-RAG (Retrieval-Augmented Generation) tabanlı bilgi asistanı. Dökümanlarınızı yükleyin, sorularınızı sorun.
+This project implements a sophisticated Retrieval-Augmented Generation pipeline that bridges the gap between static document storage and interactive AI. By leveraging Hybrid Search—combining the semantic depth of Vector Search with the keyword precision of BM25—and merging results through Reciprocal Rank Fusion (RRF), the assistant ensures high-accuracy retrieval. Built with FastAPI for high-performance serving and Ollama for local inference, it offers a secure, private, and scalable solution for document interrogation without relying on external cloud APIs.
 
-## Özellikler
+## Features
 
-- 📄 **Döküman İşleme**: TXT, PDF, MD dosyalarını destekler
-- 🔍 **Hibrit Arama**: Vektör araması + BM25 keyword araması (RRF ile birleştirilmiş)
-- 💬 **Sohbet Hafızası**: Son 5 konuşmayı hatırlar
-- 🌐 **REST API**: FastAPI ile Swagger UI desteği
-- 📊 **Değerlendirme**: Otomatik keyword ve kaynak doğruluk testi
+- 📄 **Document Processing**: Supports TXT, PDF, MD files
+- 🔍 **Hybrid Search**: Vector search + BM25 keyword search (combined with RRF)
+- 💬 **Chat Memory**: Remembers the last 5 conversations
+- 🌐 **REST API**: Swagger UI support with FastAPI
+- 📊 **Evaluation**: Automatic keyword and source accuracy testing
 
-## Kurulum
+## Installation
 
 ```bash
-# Repo'yu klonla
+# Clone the repo
 git clone <repo-url>
 cd ai_knowledge_asistant
 
-# Sanal ortam oluştur
+# Create virtual environment
 python -m venv venv
 source venv/bin/activate
 
-# Bağımlılıkları yükle
+# Install dependencies
 pip install -r requirements.txt
 
-# Ollama'yı kur ve modeli indir
+# Install Ollama and pull the model
 brew install ollama
-ollama serve  # ayrı terminal
-ollama pull llama3
-```
+ollama serve  # in a separate terminal
+ollama pull llama3```
 
-## Yapılandırma
-
-`.env.example` dosyasını `.env` olarak kopyalayıp düzenleyin:
+## Configuration
 
 ```bash
 cp .env.example .env
 ```
 
-## Kullanım
+## Usage
 
-### CLI (Komut Satırı)
+### CLI (Commend Line)
 
 ```bash
 python main.py
 ```
 
-### API Sunucusu
+### API 
 
 ```bash
 python run.py
@@ -56,16 +53,16 @@ uvicorn app.api.routes:app --reload
 
 Swagger UI: [http://localhost:8000/docs](http://localhost:8000/docs)
 
-## API Endpoint'leri
+## API Endpoints
 
-| Endpoint | Metot | Açıklama |
+| Endpoint | Method | Explenation |
 |-----------|-------|----------|
-| `/ask` | POST | Tek soru sor (hafızasız) |
-| `/chat` | POST | Sohbet et (hafızalı) |
-| `/upload` | POST | Döküman yükle (.txt, .pdf, .md) |
-| `/documents` | GET | Yüklü dökümanları listele |
+| `/ask` | POST | Single Question |
+| `/chat` | POST | Chat |
+| `/upload` | POST | Upload File (.txt, .pdf, .md) |
+| `/documents` | GET | List Uploaded File |
 
-## Proje Yapısı
+## Project Structure
 
 ```
 ai_knowledge_asistant/
@@ -90,6 +87,3 @@ ai_knowledge_asistant/
 └── .env                     # Ortam değişkenleri
 ```
 
-## Lisans
-
-MIT
