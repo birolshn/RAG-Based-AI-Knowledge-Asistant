@@ -1,0 +1,9 @@
+Artificial Neural Networks (ANN): Mathematical models that mimic the structure of neurons in the human brain.
+
+Natural Language Processing (NLP): The ability of computers to understand, interpret, and generate human language.
+
+Large Language Models (LLM): Advanced AI systems focused on text generation, trained on massive datasets.
+
+Dataset: A collection of raw information used to train or test models.
+
+Training: The stage where a model optimizes itself by learning patterns within the data.

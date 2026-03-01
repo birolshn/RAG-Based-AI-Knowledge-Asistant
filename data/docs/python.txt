@@ -1,0 +1,13 @@
+Underfitting: When a model is too simple to capture the underlying structure of the data.
+
+Accuracy: The ratio of correct predictions made by the model to the total number of predictions.
+
+Chatbot: AI software capable of conversing with users in natural language.
+
+Hallucination: When AI models confidently produce false, illogical, or non-existent information.
+
+Token: The smallest meaningful units into which text is divided for AI processing.
+
+Prompt: The input or instruction written by a user to get a response from an AI model.
+
+GPU (Graphics Processing Unit): A hardware unit that accelerates the parallel computations of AI models.

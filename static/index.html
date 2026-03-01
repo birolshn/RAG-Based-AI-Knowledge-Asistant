@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RAG tabanlı AI bilgi asistanı. Dökümanlarınızı yükleyin, sorularınızı sorun.">
+    <title>AI Bilgi Asistanı</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <span class="logo">🤖</span>
+                <div>
+                    <h1>AI Bilgi Asistanı</h1>
+                    <span class="subtitle">RAG Powered Knowledge Base</span>
+                </div>
+            </div>
+
+            <!-- Mode Selection -->
+            <div class="sidebar-section">
+                <h3>Yanıt Modu</h3>
+                <div class="mode-toggle" id="modeToggle">
+                    <button class="mode-btn active" data-mode="ask" id="btnAsk">💡 Tek Soru</button>
+                    <button class="mode-btn" data-mode="chat" id="btnChat">💬 Sohbet</button>
+                </div>
+            </div>
+
+            <!-- Model Selection -->
+            <div class="sidebar-section">
+                <h3>AI Model</h3>
+                <div class="mode-toggle" id="modelToggle">
+                    <button class="mode-btn active" data-model="llama3" id="btnLlama">🦙 Llama3</button>
+                    <button class="mode-btn" data-model="gemini" id="btnGemini">✨ Gemini</button>
+                </div>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="sidebar-section">
+                <h3>Kategori Filtresi</h3>
+                <div class="select-wrapper">
+                    <select id="categorySelect">
+                        <option value="">Tümü</option>
+                        <option value="AI">🧠 AI</option>
+                        <option value="ML">📊 ML</option>
+                        <option value="Python">🐍 Python</option>
+                        <option value="Other">📁 Diğer</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- File Upload -->
+            <div class="sidebar-section">
+                <h3>Döküman Yükle</h3>
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📤</div>
+                    <p>Dosya sürükle veya tıkla</p>
+                    <span class="file-types">.txt, .pdf, .md</span>
+                    <input type="file" id="fileInput" accept=".txt,.pdf,.md">
+                </div>
+            </div>
+
+            <!-- Document List -->
+            <div class="sidebar-section">
+                <h3>Yüklü Dökümanlar</h3>
+                <div class="doc-list" id="docList">
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        Yükleniyor...
+                    </div>
+                </div>
+            </div>
+
+            <!-- Theme Toggle & Status -->
+            <div class="theme-toggle-wrapper">
+                <div class="theme-toggle">
+                    <span>☀️ Açık Tema</span>
+                    <div class="toggle-switch active" id="themeToggle"></div>
+                </div>
+                <div class="status-badge" style="margin-top: 8px;">
+                    <span class="status-dot"></span>
+                    <span id="apiStatus">API Bağlı</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <!-- Chat Header -->
+            <header class="chat-header">
+                <h2 id="chatTitle">💡 Tek Soru Modu</h2>
+                <div class="header-actions">
+                    <button class="btn-icon" id="btnClearChat" title="Sohbeti Temizle">🗑️</button>
+                    <button class="btn-icon sidebar-toggle" id="btnToggleSidebar" title="Menü">☰</button>
+                </div>
+            </header>
+
+            <!-- Chat Messages -->
+            <div class="chat-messages" id="chatMessages">
+                <div class="chat-welcome" id="welcomeScreen">
+                    <div class="welcome-icon">🧠</div>
+                    <h3>Merhaba! Ben AI Bilgi Asistanınız</h3>
+                    <p>Yüklediğiniz dökümanlardan bilgi çıkararak sorularınızı cevaplıyorum. Bir soru sorarak başlayın!
+                    </p>
+                    <div class="welcome-suggestions">
+                        <button class="suggestion-chip" data-question="NLP nedir?">NLP nedir?</button>
+                        <button class="suggestion-chip" data-question="Overfitting nedir?">Overfitting nedir?</button>
+                        <button class="suggestion-chip" data-question="Python ne için kullanılır?">Python ne için
+                            kullanılır?</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="chat-input-area">
+                <div class="input-container">
+                    <textarea id="questionInput" placeholder="Sorunuzu yazın..." rows="1"></textarea>
+                    <button class="send-btn" id="sendBtn" title="Gönder">➤</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+
+</html>

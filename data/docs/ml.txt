@@ -1,0 +1,21 @@
+
+Algorithm: A sequence of logical steps followed to solve a specific problem.
+
+Parameter: Variables learned by the model during training that determine its predictive power.
+
+Supervised Learning: A method where the model is guided to the correct result using labeled data.
+
+Unsupervised Learning: A method aimed at discovering hidden structures and patterns in unlabeled data.
+
+Reinforcement Learning: The process of an agent learning the best strategy through a reward and punishment mechanism.
+
+Computer Vision (CV): The capability of machines to interpret and understand the visual world (images/video).
+
+Generative AI (GenAI): A type of artificial intelligence capable of creating new content such as text, images, or audio.
+
+Transfer Learning: The transfer of knowledge learned in one task to a different but related task.
+
+Fine-Tuning: The optimization of a pre-trained model for a specific task using a smaller dataset.
+
+Overfitting: A situation where the model memorizes the data and fails to perform on new, unseen data.
+

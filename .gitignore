@@ -1,0 +1,21 @@
+# Ortam
+venv/
+.env
+__pycache__/
+*.pyc
+*.pyo
+
+# Veri (büyük dosyalar)
+data/db/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+
+# Log
+rag_log.txt

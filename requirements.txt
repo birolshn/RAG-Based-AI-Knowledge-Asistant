@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+python-dotenv
+python-multipart
+langchain
+langchain-community
+langchain-ollama
+langchain-huggingface
+langchain-google-genai
+langchain-text-splitters
+chromadb
+sentence-transformers
+rank_bm25
